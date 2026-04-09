@@ -1,0 +1,26 @@
+{
+  "run": {
+    "enabled_operators": [
+      "lifetime_1",
+      "lifetime_2",
+      "ownership_1",
+      "ownership_2",
+      "const_1",
+      "const_2"
+    ],
+    "limit": 0,
+    "seed_selection_strategy": "random",
+    "shuffle_seed": null,
+    "notip": true,
+    "target_extraction": "ast_first",
+    "enable_trait_rewrite": false,
+    "rewrite_min_chars": 10,
+    "llm_lock_timeout_sec": 180,
+    "llm_lock_stale_after_sec": 900,
+    "save_prompt": false
+  },
+  "paths": {
+    "seeds": "seeds",
+    "results": "mutation_crossfeature/results"
+  }
+}

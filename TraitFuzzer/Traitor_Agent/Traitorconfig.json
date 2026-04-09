@@ -1,0 +1,46 @@
+{
+	"paths": {
+		"input_dataset": "seeds",
+		"output_dir": "Traitor_Agent/trait_dense_seeds",
+		"summary_jsonl": "Traitor_Agent/trait_dense_seeds/_summary.jsonl"
+	},
+	"runtime": {
+		"max_cases": 0,
+		"shuffle": true,
+		"seed": 42,
+		"skip_existing": true,
+		"total_update_every": 20
+	},
+	"compiler": {
+		"rustc_cmd": [
+			"rustc",
+			"+nightly"
+		]
+	},
+	"llm": {
+		"provider": "ollama",
+		"model": "qwen2.5-coder:14b",
+		"api_base": "http://127.0.0.1:12023",
+		"timeout": 120,
+		"options": {
+			"num_gpu": 48,
+			"num_thread": 32
+		}
+	},
+	"traitor_agent": {
+		"repair_max_iters": 2,
+		"abort_on_crash_hang": true,
+		"baseline_shots": 2,
+		"experience_shots": 2,
+		"fewshot_pool_dir": "Traitor_Agent/pools",
+		"compile_extra_args": [],
+		"compile_timeout_sec": 20,
+		"structure_complexity_extra_args": [],
+		"structure_complexity_timeout_sec": 20
+	},
+	"pool_builder": {
+		"results_dir": "results",
+		"max_baseline": 300,
+		"max_experience": 300
+	}
+}

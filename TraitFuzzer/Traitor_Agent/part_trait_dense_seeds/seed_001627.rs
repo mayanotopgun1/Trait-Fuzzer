@@ -1,0 +1,13 @@
+trait AssertEq { fn assert_equal(&self, other: &Self) -> bool; }
+
+impl<T> AssertEq for T where T: PartialEq {
+    fn assert_equal(&self, other: &Self) -> bool {
+        self == other
+    }
+}
+
+fn main() {
+    let a = 1;
+    let b = 2;
+    assert!(a.assert_equal(&b));
+}
